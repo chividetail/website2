@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChiviDetail – Car Detailing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f0f2f5;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 40px;
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            color: #0077cc;
+        }
+
+        .header-right a {
+            margin-left: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+            .header-right a:hover {
+                color: #0077cc;
+            }
+
+        /* HERO */
+        .hero {
+            height: 70vh;
+            background: url("https://surfnshine.com/wp-content/uploads/2023/10/car-exterior-detailing-1024x576.jpg") center/cover no-repeat fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            margin-top: 70px;
+        }
+
+            .hero::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+            }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ddd;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 80px 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+            .services h2 {
+                font-size: 40px;
+                margin-bottom: 50px;
+                color: #222;
+            }
+
+        .container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            width: 380px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+            .card:hover {
+                transform: translateY(-12px);
+                box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+            }
+
+            .card img {
+                width: 100%;
+                height: 240px;
+                object-fit: cover;
+                transition: filter 0.4s ease;
+            }
+
+            .card:hover img {
+                filter: brightness(70%);
+            }
+
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 20px 20px 5px;
+            color: #222;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0077cc;
+            margin: 0 20px 15px;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #555;
+            margin: 0 20px 25px;
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .card:hover .description {
+            max-height: 300px;
+            opacity: 1;
+        }
+
+        /* CONTACT */
+        .contact {
+            position: relative;
+            padding: 100px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+            .contact::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url("https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg") center/cover no-repeat fixed;
+                z-index: 0;
+                filter: brightness(30%);
+            }
+
+            .contact h2 {
+                font-size: 36px;
+                margin-bottom: 30px;
+                color: #fff;
+                position: relative;
+                z-index: 1;
+            }
+
+        form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            max-width: 450px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #0077cc;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+            button:hover {
+                background: #005fa3;
+            }
+
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: white;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+            footer p {
+                margin: 5px 0;
+            }
+
+            footer .socials a {
+                color: white;
+                margin-right: 15px;
+                font-size: 20px;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                footer .socials a:hover {
+                    color: #0077cc;
+                }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-left">
+            <img src="https://www.pngmart.com/files/23/Cheetos-Logo-PNG-Image.png" alt="Logo">
+            <h1>ChiviDetail</h1>
+        </div>
+        <div class="header-right">
+            <a href="#">🎵</a> <!-- TikTok -->
+            <a href="#">📸</a> <!-- Instagram -->
+            <a href="#">📘</a> <!-- Facebook -->
+            <a href="#">▶️</a> <!-- YouTube -->
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to ChiviDetail</h1>
+            <p>Premium car detailing and polishing services, inspired by the precision of a cat’s eye.</p>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="container">
+            <div class="card">
+                <img src="https://www.moje-auto.pl/blog/wp-content/uploads/2024/03/auto-detailing-w-wykonaniu-przystojnego-mezczyzny.jpg" alt="Paint Polishing">
+                <div class="title">Paint Polishing</div>
+                <div class="price">$150</div>
+                <div class="description">Multi-stage paint correction to remove swirls and scratches, restoring a deep mirror-like shine.</div>
+            </div>
+            <div class="card">
+                <img src="https://bigsmobile.com/wp-content/uploads/2023/06/auto-detailing-car-interior-eps-2048x1367-1.jpeg" alt="Interior Detailing">
+                <div class="title">Interior Detailing</div>
+                <div class="price">$120</div>
+                <div class="description">Deep interior cleaning: steam cleaning, stain removal, leather conditioning and odor elimination.</div>
+            </div>
+            <div class="card">
+                <img src="https://a1mobilecardetailing.com.au/wp-content/uploads/2022/12/ceramic-coating.jpg" alt="Ceramic Coating">
+                <div class="title">Ceramic Coating</div>
+                <div class="price">$400</div>
+                <div class="description">Durable ceramic protection for enhanced gloss, hydrophobic effect, and resistance to UV and dirt.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" netlify>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="_replyto" required>
+
+            <label for="service">Select Service</label>
+            <select id="service" name="service" required>
+                <option value="" disabled selected>-- Choose a service --</option>
+                <option value="Paint Polishing">Paint Polishing</option>
+                <option value="Interior Detailing">Interior Detailing</option>
+                <option value="Ceramic Coating">Ceramic Coating</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Phone: +1 (555) 123-4567 | Email: info@chividetail.com</p>
+        <div class="socials">
+            <a href="#">🎵</a> <!-- TikTok -->
+            <a href="#">📸</a> <!-- Instagram -->
+            <a href="#">📘</a> <!-- Facebook -->
+            <a href="#">▶️</a> <!-- YouTube -->
+        </div>
+    </footer>
+
+</body>
+</html>
+
