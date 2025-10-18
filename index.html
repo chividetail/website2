@@ -16,6 +16,7 @@
             scroll-behavior: smooth;
         }
 
+
         /* HEADER */
         header {
             position: fixed;
@@ -55,9 +56,10 @@
             transition: color 0.3s;
         }
 
-            .header-right a:hover {
-                color: #0077cc;
-            }
+        .header-right a:hover {
+            color: #0077cc;
+        }
+
 
         /* HERO */
         .hero {
@@ -73,15 +75,15 @@
             margin-top: 70px;
         }
 
-            .hero::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.5);
-            }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
 
         .hero-content {
             position: relative;
@@ -102,6 +104,7 @@
             color: #ddd;
         }
 
+
         /* SERVICES */
         .services {
             padding: 80px 20px;
@@ -109,11 +112,11 @@
             text-align: center;
         }
 
-            .services h2 {
-                font-size: 40px;
-                margin-bottom: 50px;
-                color: #222;
-            }
+        .services h2 {
+            font-size: 40px;
+            margin-bottom: 50px;
+            color: #222;
+        }
 
         .container {
             display: flex;
@@ -134,21 +137,21 @@
             cursor: pointer;
         }
 
-            .card:hover {
-                transform: translateY(-12px);
-                box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-            }
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+        }
 
-            .card img {
-                width: 100%;
-                height: 240px;
-                object-fit: cover;
-                transition: filter 0.4s ease;
-            }
+        .card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: filter 0.4s ease;
+        }
 
-            .card:hover img {
-                filter: brightness(70%);
-            }
+        .card:hover img {
+            filter: brightness(70%);
+        }
 
         .title {
             font-size: 24px;
@@ -180,6 +183,7 @@
             opacity: 1;
         }
 
+
         /* CONTACT */
         .contact {
             position: relative;
@@ -188,32 +192,32 @@
             overflow: hidden;
         }
 
-            .contact::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: url("https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg") center/cover no-repeat fixed;
-                z-index: 0;
-                filter: brightness(30%);
-            }
+        .contact::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg") center/cover no-repeat fixed;
+            z-index: 0;
+            filter: brightness(30%);
+        }
 
-            .contact h2 {
-                font-size: 36px;
-                margin-bottom: 30px;
-                color: #fff;
-                position: relative;
-                z-index: 1;
-            }
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
 
         form {
             background: #fff;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-            max-width: 450px;
+            max-width: 550px; 
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -221,18 +225,21 @@
 
         label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px; 
             font-weight: 600;
             text-align: left;
+            font-size: 14px;  
+            color: #333;       
         }
 
         input, textarea, select {
             width: 100%;
             padding: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 0; 
             border: 1px solid #ccc;
             border-radius: 8px;
             font-size: 15px;
+            background-color: #f9f9f9; 
         }
 
         button {
@@ -248,9 +255,61 @@
             transition: background 0.3s ease;
         }
 
-            button:hover {
-                background: #005fa3;
-            }
+        button:hover {
+            background: #005fa3;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .required {
+            color: #d90429; /* Red asterisk */
+            font-weight: bold;
+            margin-left: 2px;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        ::placeholder {
+            color: #999;
+            opacity: 1;
+        }
+
+        .checkbox-group {
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px 15px;
+        }
+
+        .checkbox-group div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .checkbox-group div:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto; /* Override default */
+            margin-right: 10px;
+            accent-color: #0077cc; /* Match button color */
+        }
+        
+        .checkbox-label {
+            display: inline; /* Override default */
+            margin-bottom: 0;
+            font-weight: normal; /* Lighter than main labels */
+            font-size: 15px;
+            color: #333;
+        }
+
 
         /* FOOTER */
         footer {
@@ -262,40 +321,35 @@
             align-items: flex-start;
         }
 
-            footer p {
-                margin: 5px 0;
-            }
+        footer p {
+            margin: 5px 0;
+        }
 
-            footer .socials a {
-                color: white;
-                margin-right: 15px;
-                font-size: 20px;
-                text-decoration: none;
-                transition: color 0.3s;
-            }
+        footer .socials a {
+            color: white;
+            margin-right: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-                footer .socials a:hover {
-                    color: #0077cc;
-                }
+        footer .socials a:hover {
+            color: #0077cc;
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="header-left">
             <img src="https://www.pngmart.com/files/23/Cheetos-Logo-PNG-Image.png" alt="Logo">
             <h1>ChiviDetail</h1>
         </div>
         <div class="header-right">
-            <a href="#">🎵</a> <!-- TikTok -->
-            <a href="#">📸</a> <!-- Instagram -->
-            <a href="#">📘</a> <!-- Facebook -->
-            <a href="#">▶️</a> <!-- YouTube -->
-        </div>
+            <a href="#">🎵</a> <a href="#">📸</a> <a href="#">📘</a> <a href="#">▶️</a> </div>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
             <h1>Welcome to ChiviDetail</h1>
@@ -303,68 +357,145 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="services" id="services">
         <h2>Our Services</h2>
         <div class="container">
+            
             <div class="card">
-                <img src="https://www.moje-auto.pl/blog/wp-content/uploads/2024/03/auto-detailing-w-wykonaniu-przystojnego-mezczyzny.jpg" alt="Paint Polishing">
-                <div class="title">Paint Polishing</div>
-                <div class="price">$150</div>
-                <div class="description">Multi-stage paint correction to remove swirls and scratches, restoring a deep mirror-like shine.</div>
+                <img src="https://bigsmobile.com/wp-content/uploads/2023/06/auto-detailing-car-interior-eps-2048x1367-1.jpeg" alt="Exterior and Interior Detailing">
+                <div class="title">Exterior and Interior Detailing</div>
+                <div class="price">From $120</div>
+                <div class="description">A comprehensive clean for your entire vehicle. We meticulously restore the shine to your paint and deep clean every surface inside, leaving your car looking and feeling brand new.</div>
             </div>
+            
             <div class="card">
-                <img src="https://bigsmobile.com/wp-content/uploads/2023/06/auto-detailing-car-interior-eps-2048x1367-1.jpeg" alt="Interior Detailing">
-                <div class="title">Interior Detailing</div>
-                <div class="price">$120</div>
-                <div class="description">Deep interior cleaning: steam cleaning, stain removal, leather conditioning and odor elimination.</div>
+                <img src="https://i.shgcdn.com/2307b8f0-da7a-4788-ac87-4fc25e4d38bd/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Paint Polishing / Correction">
+                <div class="title">Odor elemination</div>
+                <div class="price">From $150</div>
+                <div class="description">Permanently removes unwanted smells like smoke, pet odors, and mildew from your car's interior, restoring a fresh and neutral environment.</div>
             </div>
+            
             <div class="card">
-                <img src="https://a1mobilecardetailing.com.au/wp-content/uploads/2022/12/ceramic-coating.jpg" alt="Ceramic Coating">
+                <img src="https://assets.goaaa.com/image/upload/w_auto,q_auto,f_auto/v1663776417/Via/professional-headlight-restoration-via-magazine-aaa-shutterstock_2039932055.jpg">
+                <div class="title">Headlight Restoration</div>
+                <div class="price">From $400</div>
+                <div class="description">Clears away foggy, yellowed oxidation from your headlights, dramatically improving visibility for safer night driving and restoring your car's sharp look.</div>
+            </div>
+
+            <div class="card">
+                <img src="https://lirp.cdn-website.com/90cc352a/dms3rep/multi/opt/Using-An-Orbital-Polisher-2-960w.jpeg" alt="Ceramic Coating">
+                <div class="title">Paint Polishing / Correction</div>
+                <div class="price">From $400</div>
+                <div class="description">Removes swirls, light scratches, and imperfections from your paint's surface, revealing a deep, glossy, mirror-like shine.</div>
+            </div>
+
+            <div class="card">
+                <img src="https://acko-cms.ackoassets.com/ceramic_coating_for_cars_c4f75687f3.jpg" alt="Ceramic Coating">
                 <div class="title">Ceramic Coating</div>
-                <div class="price">$400</div>
-                <div class="description">Durable ceramic protection for enhanced gloss, hydrophobic effect, and resistance to UV and dirt.</div>
+                <div class="price">From $400</div>
+                <div class="description">Provides durable, long-term protection for your paint against environmental damage, UV rays, and contaminants, while delivering incredible gloss and making washing easier.</div>
             </div>
+
+            <div class="card">
+                <img src="https://www.moje-auto.pl/blog/wp-content/uploads/2023/05/2-560x370.jpeg" alt="Ceramic Coating">
+                <div class="title">Glass Polishing & Protection</div>
+                <div class="price">From $400</div>
+                <div class="description">Deep cleans all exterior glass to remove tough water spots and contamination, then applies a hydrophobic coating to repel rain, improving visibility in all weather.</div>
+            </div>
+
+            <div class="card">
+                <img src="https://a1mobilecardetailing.com.au/wp-content/uploads/2023/01/car-engine-bay-detailing-1.jpg" alt="Ceramic Coating">
+                <div class="title">Engine Bay Cleaning</div>
+                <div class="price">From $400</div>
+                <div class="description">Safely degreases and details your engine compartment, removing built-up grime and dirt to make maintenance easier and showcase a pristine engine.</div>
+            </div>
+
         </div>
     </section>
-
-    <!-- CONTACT -->
     <section class="contact" id="contact">
-        <h2>Contact Us</h2>
-        <form action="/thank.html" method="POST" netlify>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+        <h2>Request Service Quote</h2>
+        
+        <form name="service-quote" method="POST" data-netlify="true" action="/thank.html">
+            <input type="hidden" name="form-name" value="service-quote" />
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="_replyto" required>
+            <div class="form-group">
+                <label for="vehicle-type">Vehicle Type <span class="required">*</span></label>
+                <select id="vehicle-type" name="vehicle-type" required>
+                    <option value="" disabled selected>Select vehicle type</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="truck">Truck</option>
+                    <option value="coupe">Coupe</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
 
-            <label for="service">Select Service</label>
-            <select id="service" name="service" required>
-                <option value="" disabled selected>-- Choose a service --</option>
-                <option value="Paint Polishing">Paint Polishing</option>
-                <option value="Interior Detailing">Interior Detailing</option>
-                <option value="Ceramic Coating">Ceramic Coating</option>
-            </select>
+            <div class="form-group">
+                <label for="state">State <span class="required">*</span></label>
+                <input type="text" id="state" name="state" placeholder="e.g., California" required>
+            </div>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <div class="form-group">
+                <label for="zip">ZIP Code <span class="required">*</span></label>
+                <input type="text" id="zip" name="zip" placeholder="12345" required pattern="\d{5}">
+            </div>
 
-            <button type="submit">Send Message</button>
+            <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+            </div>
+
+            <div class="form-group">
+                <label>Requested Services</label>
+                <div class="checkbox-group">
+                    <div>
+                        <input type="checkbox" id="service-1" name="services-requested[]" value="Exterior and Interior Detailing">
+                        <label for="service-1" class="checkbox-label">Exterior and Interior Detailing</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="service-2" name="services-requested[]" value="Odor Elimination">
+                        <label for="service-2" class="checkbox-label">Odor Elimination</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="service-3" name="services-requested[]" value="Headlight Restoration">
+                        <label for="service-3" class="checkbox-label">Headlight Restoration</label>
+                    </div>
+                     <div>
+                        <input type="checkbox" id="service-4" name="services-requested[]" value="Paint Polishing / Correction">
+                        <label for="service-4" class="checkbox-label">Paint Polishing / Correction</label>
+                    </div>
+                     <div>
+                        <input type="checkbox" id="service-5" name="services-requested[]" value="Ceramic Coating">
+                        <label for="service-5" class="checkbox-label">Ceramic Coating</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="service-6" name="services-requested[]" value="Glass Polishing & Protection">
+                        <label for="service-6" class="checkbox-label">Glass Polishing & Protection</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="service-7" name="services-requested[]" value="Engine Bay Cleaning">
+                        <label for="service-7" class="checkbox-label">Engine Bay Cleaning</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments (Optional)</label>
+                <textarea id="comments" name="comments" placeholder="Tell us more about your service needs, any specific concerns, or preferences..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit Request</button>
+            </div>
+
         </form>
     </section>
 
-    <!-- FOOTER -->
+
     <footer>
         <p>Phone: +1 (555) 123-4567 | Email: info@chividetail.com</p>
         <div class="socials">
-            <a href="#">🎵</a> <!-- TikTok -->
-            <a href="#">📸</a> <!-- Instagram -->
-            <a href="#">📘</a> <!-- Facebook -->
-            <a href="#">▶️</a> <!-- YouTube -->
-        </div>
+            <a href="#">🎵</a> <a href="#">📸</a> <a href="#">📘</a> <a href="#">▶️</a> </div>
     </footer>
 
 </body>
 </html>
-
-
