@@ -448,79 +448,79 @@
     <section class="contact" id="contact">
         <h2>Request Service Quote</h2>
 
-        <form name="service-quote" method="POST" data-netlify="true" action="/thank.html">
-    <input type="hidden" name="form-name" value="service-quote" />
+        <form name="quote-request" method="POST" data-netlify="true">
 
-            <div class="form-group">
-                <label for="vehicle-type">Vehicle Type <span class="required">*</span></label>
-                <select id="vehicle-type" name="vehicle-type" required>
-                    <option value="" disabled selected>Select vehicle type</option>
-                    <option value="sedan">Sedan</option>
-                    <option value="suv">SUV</option>
-                    <option value="truck">Truck</option>
-                    <option value="coupe">Coupe</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
+    <div class="form-group">
+        <label for="vehicle-type">Vehicle Type <span class="required">*</span></label>
+        <select id="vehicle-type" name="vehicle-type" required>
+            <option value="" disabled selected>Select vehicle type</option>
+            <option value="sedan">Sedan</option>
+            <option value="suv">SUV</option>
+            <option value="truck">Truck</option>
+            <option value="coupe">Coupe</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
 
-            <div class="form-group">
-                <label for="state">State <span class="required">*</span></label>
-                <input type="text" id="state" name="state" placeholder="e.g., California" required>
-            </div>
+    <div class="form-group">
+        <label for="state">State <span class="required">*</span></label>
+        <input type="text" id="state" name="state" placeholder="e.g., California" required>
+    </div>
 
-            <div class="form-group">
-                <label for="zip">ZIP Code <span class="required">*</span></label>
-                <input type="text" id="zip" name="zip" placeholder="12345" required pattern="\d{5}">
-            </div>
+    <div class="form-group">
+        <label for="zip">ZIP Code <span class="required">*</span></label>
+        <input type="text" id="zip" name="zip" placeholder="12345" required pattern="\d{5}">
+    </div>
 
-            <div class="form-group">
-                <label for="phone">Phone Number <span class="required">*</span></label>
-                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
-            </div>
+    <div class="form-group">
+        <label for="phone">Phone Number <span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+    </div>
 
-            <div class="form-group">
-                <label>Requested Services</label>
-                <div class="checkbox-group">
-                    <div>
-                        <input type="checkbox" id="service-1" name="services-requested[]" value="Exterior and Interior Detailing">
-                        <label for="service-1" class="checkbox-label">Exterior and Interior Detailing</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="service-2" name="services-requested[]" value="Odor Elimination">
-                        <label for="service-2" class="checkbox-label">Odor Elimination</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="service-3" name="services-requested[]" value="Headlight Restoration">
-                        <label for="service-3" class="checkbox-label">Headlight Restoration</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="service-4" name="services-requested[]" value="Paint Polishing / Correction">
-                        <label for="service-4" class="checkbox-label">Paint Polishing / Correction</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="service-5" name="services-requested[]" value="Ceramic Coating">
-                        <label for="service-5" class="checkbox-label">Ceramic Coating</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="service-6" name="services-requested[]" value="Glass Polishing & Protection">
-                        <label for="service-6" class="checkbox-label">Glass Polishing & Protection</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="service-7" name="services-requested[]" value="Engine Bay Cleaning">
-                        <label for="service-7" class="checkbox-label">Engine Bay Cleaning</label>
-                    </div>
-                </div>
+    <div class="form-group">
+        <label>Requested Services</label>
+        <div class="checkbox-group">
+            <div>
+                <input type="checkbox" id="service-1" name="service-detailing" value="Exterior and Interior Detailing">
+                <label for="service-1" class="checkbox-label">Exterior and Interior Detailing</label>
             </div>
-            <div class="form-group">
-                <label for="comments">Comments (Optional)</label>
-                <textarea id="comments" name="comments" placeholder="Tell us more about your service needs, any specific concerns, or preferences..."></textarea>
+            <div>
+                <input type="checkbox" id="service-2" name="service-odor" value="Odor Elimination">
+                <label for="service-2" class="checkbox-label">Odor Elimination</label>
             </div>
+            <div>
+                <input type="checkbox" id="service-3" name="service-headlight" value="Headlight Restoration">
+                <label for="service-3" class="checkbox-label">Headlight Restoration</label>
+            </div>
+            <div>
+                <input type="checkbox" id="service-4" name="service-polishing" value="Paint Polishing / Correction">
+                <label for="service-4" class="checkbox-label">Paint Polishing / Correction</label>
+            </div>
+            <div>
+                <input type="checkbox" id="service-5" name="service-ceramic" value="Ceramic Coating">
+                <label for="service-5" class="checkbox-label">Ceramic Coating</label>
+            </div>
+            <div>
+                <input type="checkbox" id="service-6" name="service-glass" value="Glass Polishing & Protection">
+                <label for="service-6" class="checkbox-label">Glass Polishing & Protection</label>
+            </div>
+            <div>
+                <input type="checkbox" id="service-7" name="service-engine" value="Engine Bay Cleaning">
+                <label for="service-7" class="checkbox-label">Engine Bay Cleaning</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="comments">Comments (Optional)</label>
+        <textarea id="comments" name="comments" placeholder="Tell us more about your service needs..."></textarea>
+    </div>
 
-            <div class="form-group">
-                <button type="submit">Submit Request</button>
-            </div>
+    <div class="form-group">
+        <button type="submit">Submit Request</button>
+    </div>
 
-        </form>
+</form>
     </section>
 
 
@@ -535,6 +535,7 @@
 
 </body>
 </html>
+
 
 
 
