@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>ChiviDetail – Car Detailing</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>Chivas Auto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chivas Auto | Cyber-Luxury Detailing</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
+        /* === ПАЛИТРА И ПЕРЕМЕННЫЕ (Cyber-Luxury) === */
+        :root {
+            --bg-deep: #05080c;
+            --bg-panel: rgba(10, 15, 20, 0.8);
+            --neon-cyan: #00e5ff;
+            --neon-glow: rgba(0, 229, 255, 0.5);
+            --neon-glow-strong: rgba(0, 229, 255, 0.8);
+            --text-light: #ffffff;
+            --text-muted: #8ba0b2;
+            --font-main: 'Montserrat', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* === БАЗОВЫЕ НАСТРОЙКИ === */
         * {
             margin: 0;
             padding: 0;
@@ -14,529 +33,731 @@
         }
 
         body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #f0f2f5;
+            font-family: var(--font-main);
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
+        ::selection {
+            background: var(--neon-cyan);
+            color: #000;
+        }
 
-        /* HEADER */
+        /* === ШАПКА САЙТА === */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: #f5f5f5;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 10px 40px;
+            align-items: center;
+            padding: 15px 5%;
             z-index: 1000;
+            background: rgba(5, 8, 12, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--neon-cyan);
+            box-shadow: 0 4px 20px var(--neon-glow);
+            transition: var(--transition);
         }
 
-        .header-left {
+        .logo-area {
             display: flex;
             align-items: center;
+            gap: 15px;
         }
 
-        header img {
-            width: 80px; /* <-- Можете увеличить это значение (было 60px) */
-            height: 80px; /* <-- Можете увеличить это значение (было 60px) */
-            margin-right: 15px;
-        }
-
-        header h1 {
-            font-size: 24px;
-            color: #1c1c1c;
-        }
-
-        .header-right a {
-            margin-left: 15px;
-            font-size: 20px;
-            text-decoration: none;
-            color: #333;
-            transition: color 0.3s;
-        }
-
-            .header-right a:hover {
-                color: #0077cc;
+            .logo-area img {
+                height: 45px;
             }
 
-            .header-right a i,
-            footer .socials a i {
-                width: 24px;
-                text-align: center;
-            }
-
-
-        /* HERO */
-        .hero {
-            height: 70vh;
-            background: url("https://img1.wsimg.com/isteam/ip/d741a83a-b355-4d1f-9e27-20bb3b354d21/man-cleaning-car-with-microfiber-cloth.jpg") center/cover no-repeat fixed;
+        .logo-text {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            margin-top: 70px;
-            overflow: hidden;
         }
 
-            .hero::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: url("https://i.pinimg.com/736x/42/9d/6b/429d6bf14dd1a397e86696fc8b11f53f.jpg") center/cover no-repeat fixed;
-                /* ВОТ САМ БЛЮР */
-                filter: blur(5px); /* Можете поменять 5px на 3px или 8px по вкусу */
+            .logo-text h1 {
+                font-size: 22px;
+                font-weight: 800;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                line-height: 1;
+                margin-bottom: 2px;
             }
 
+            .logo-text span {
+                font-size: 11px;
+                color: var(--text-muted);
+                letter-spacing: 1px;
+            }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+            nav a {
+                color: var(--text-light);
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                transition: var(--transition);
+            }
+
+                nav a:hover {
+                    color: var(--neon-cyan);
+                    text-shadow: 0 0 10px var(--neon-glow);
+                }
+
+        /* === ГЛАВНЫЙ ЭКРАН (HERO) === */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-left: 8%;
+            overflow: hidden;
+            /* Плавный переход фона снизу (градиент) в цвет секции услуг */
+            background: linear-gradient(to bottom, rgba(5,8,12,0) 75%, var(--bg-deep) 100%), 
+                        url('hero-bg.png') no-repeat center center / cover;
+        }
+
+            /* Боковой градиент для читаемости текста */
             .hero::after {
-                content: "";
+                content: '';
                 position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.5);
+                inset: 0;
+                background: linear-gradient(90deg, rgba(5,8,12,0.7) 0%, rgba(5,8,12,0) 60%);
+                z-index: 1;
+                pointer-events: none;
             }
 
         .hero-content {
             position: relative;
-            z-index: 1;
-            max-width: 800px;
-            padding: 20px;
+            z-index: 2;
+            max-width: 650px;
+            margin-top: 50px;
         }
 
-        /* Логотип в секции Hero */
-        .hero-logo {
-            width: 500px; /* <-- Можете увеличить это значение (было 120px) */
-            height: 500px; /* <-- Можете увеличить это значение (было 120px) */
-            margin-bottom: 20px;
+        .hero-title {
+            font-size: clamp(60px, 8vw, 110px);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--neon-cyan);
+            text-shadow: 0 0 20px var(--neon-glow);
         }
 
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        .hero-subtitle {
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 600;
+            color: var(--text-light);
+            line-height: 1.4;
+            max-width: 500px;
         }
 
-        .hero p {
-            font-size: 18px;
-            color: #ddd;
-        }
-
-
-        /* SERVICES */
+        /* === БЛОК УСЛУГ (SERVICES) === */
         .services {
-            padding: 80px 20px;
-            background: #f5f5f5;
-            text-align: center;
+            padding: 100px 5%;
+            background-color: var(--bg-deep);
+            position: relative;
         }
 
-            .services h2 {
-                font-size: 40px;
-                margin-bottom: 50px;
-                color: #222;
+        .section-header {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+            .section-header span {
+                color: var(--neon-cyan);
+                text-shadow: 0 0 15px var(--neon-glow);
             }
 
-        .container {
+        /* Заменили Grid на Flexbox для выравнивания по центру */
+        .services-grid {
             display: flex;
-            gap: 40px;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 30px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .card {
-            background: #fff;
-            border-radius: 20px;
+        .service-card {
+            background: var(--bg-panel);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            flex: 1 1 320px; /* Базовый размер 320px, позволяет расти */
+            max-width: 400px; /* Ограничение, чтобы карточки не были слишком широкими */
+        }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                border-color: var(--neon-cyan);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.8), 0 0 25px var(--neon-glow);
+            }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
             overflow: hidden;
-            width: 380px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-            .card:hover {
-                transform: translateY(-12px);
-                box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-            }
-
-            .card img {
-                width: 100%;
-                height: 240px;
-                object-fit: cover;
-                transition: filter 0.4s ease;
-            }
-
-            .card:hover img {
-                filter: brightness(70%);
-            }
-
-        .title {
-            font-size: 24px;
-            font-weight: 700;
-            margin: 20px 20px 5px;
-            color: #222;
-        }
-
-        /* Стили для цены */
-        .price {
-            font-size: 18px;
-            font-weight: 600;
-            color: #858585;
-            margin: 0 20px 15px;
-        }
-
-        .description {
-            font-size: 16px;
-            color: #555;
-            margin: 0 20px 25px;
-            line-height: 1.6;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, opacity 0.4s ease;
-            opacity: 0;
-        }
-
-        .card:hover .description {
-            max-height: 300px;
-            opacity: 1;
-        }
-
-
-        /* CONTACT */
-        .contact {
+            margin-bottom: 20px;
             position: relative;
-            padding: 100px 20px;
-            text-align: center;
-            overflow: hidden;
         }
 
-            .contact::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
+            .card-img-wrapper img {
                 width: 100%;
                 height: 100%;
-                background: url("https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg") center/cover no-repeat fixed;
-                z-index: 0;
-                filter: brightness(30%);
+                object-fit: cover;
+                filter: grayscale(40%) contrast(1.1);
+                transition: var(--transition);
             }
 
-            .contact h2 {
-                font-size: 36px;
-                margin-bottom: 30px;
-                color: #fff;
-                position: relative;
-                z-index: 1;
-            }
-
-        form {
-            background: #f5f5f5;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-            max-width: 550px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+        .service-card:hover .card-img-wrapper img {
+            filter: grayscale(0%) contrast(1.2);
+            transform: scale(1.05);
         }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            text-align: left;
-            font-size: 14px;
-            color: #333;
+        .card-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 10px;
         }
 
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 0;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 15px;
-            background-color: #f9f9f9;
-        }
-
-        button {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            background: #474747;
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-            button:hover {
-                background: #636363;
-            }
-
-        .form-group {
+        .card-price {
+            font-size: 18px;
+            color: var(--neon-cyan);
+            font-weight: 800;
             margin-bottom: 15px;
         }
 
-        .required {
-            color: #d90429; /* Red asterisk */
-            font-weight: bold;
-            margin-left: 2px;
-        }
-
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        ::placeholder {
-            color: #999;
-            opacity: 1;
-        }
-
-        .checkbox-group {
-            background: #f9f9f9;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 10px 15px;
-        }
-
-            .checkbox-group div {
-                display: flex;
-                align-items: center;
-                margin-bottom: 8px;
-            }
-
-                .checkbox-group div:last-child {
-                    margin-bottom: 0;
-                }
-
-            .checkbox-group input[type="checkbox"] {
-                width: auto; /* Override default */
-                margin-right: 10px;
-                accent-color: #0077cc; /* Match button color */
-            }
-
-        .checkbox-label {
-            display: inline; /* Override default */
-            margin-bottom: 0;
-            font-weight: normal; /* Lighter than main labels */
+        .card-desc {
             font-size: 15px;
-            color: #333;
+            color: var(--text-muted);
+            flex-grow: 1;
         }
 
+        /* === ФОРМА ЗАЯВКИ (BOOKING) === */
+        .contact-section {
+            padding: 100px 5%;
+            background: linear-gradient(to bottom, var(--bg-deep), #020305);
+            position: relative;
+        }
 
-        /* FOOTER */
-        footer {
-            background: #222;
-            color: white;
-            padding: 40px 20px;
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(10, 15, 20, 0.6);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), inset 0 0 30px rgba(0, 229, 255, 0.05);
+            backdrop-filter: blur(20px);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .input-group {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            gap: 8px;
         }
 
-            footer p {
-                margin: 5px 0;
+            .input-group label {
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--text-muted);
+                text-transform: uppercase;
             }
 
-            footer .socials a {
+        .required {
+            color: var(--neon-cyan);
+        }
+
+        input[type="text"], input[type="tel"], input[type="email"], select, textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 20px;
+            color: var(--text-light);
+            font-family: var(--font-main);
+            border-radius: 8px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        /* Стили для поля загрузки файла */
+        input[type="file"] {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            padding: 14px 20px;
+            color: var(--text-light);
+            font-family: var(--font-main);
+            border-radius: 8px;
+            outline: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        input[type="file"]::file-selector-button {
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            background: var(--neon-cyan);
+            color: #000;
+        }
+
+            input:focus, select:focus, textarea:focus, input[type="file"]:hover {
+                border-color: var(--neon-cyan);
+                box-shadow: 0 0 15px var(--neon-glow);
+                background: rgba(0, 229, 255, 0.05);
+            }
+
+            select option {
+                background: var(--bg-deep);
                 color: white;
-                margin-right: 15px;
-                font-size: 20px;
-                text-decoration: none;
-                transition: color 0.3s;
             }
 
-                footer .socials a:hover {
-                    color: #0077cc;
+        /* Чекбоксы в стиле кибер-панели */
+        .checkbox-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+            .checkbox-wrapper:hover {
+                border-color: rgba(0, 229, 255, 0.3);
+                background: rgba(0, 229, 255, 0.05);
+            }
+
+            .checkbox-wrapper input[type="checkbox"] {
+                appearance: none;
+                min-width: 20px;
+                width: 20px;
+                height: 20px;
+                border: 2px solid var(--text-muted);
+                border-radius: 4px;
+                margin-right: 12px;
+                position: relative;
+                cursor: pointer;
+                transition: var(--transition);
+                background: transparent;
+                padding: 0;
+            }
+
+                .checkbox-wrapper input[type="checkbox"]:checked {
+                    background-color: var(--neon-cyan);
+                    border-color: var(--neon-cyan);
+                    box-shadow: 0 0 10px var(--neon-glow);
                 }
+
+                    .checkbox-wrapper input[type="checkbox"]:checked::after {
+                        content: '✔';
+                        position: absolute;
+                        color: #000;
+                        font-size: 14px;
+                        font-weight: 900;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+
+        .checkbox-label {
+            font-size: 14px;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        /* Стили для дисклеймера */
+        .disclaimer {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-style: italic;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        button.submit-btn {
+            grid-column: span 2;
+            padding: 20px;
+            background: transparent;
+            color: var(--neon-cyan);
+            font-family: var(--font-main);
+            font-weight: 800;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid var(--neon-cyan);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+            button.submit-btn:hover {
+                background: var(--neon-cyan);
+                color: #000;
+                box-shadow: 0 0 30px var(--neon-glow-strong);
+                transform: translateY(-3px);
+            }
+
+        /* === ПОДВАЛ (FOOTER) === */
+        footer {
+            padding: 50px 5%;
+            background: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .footer-info p {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .footer-info i {
+            color: var(--neon-cyan);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+            .social-links a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.05);
+                color: var(--text-light);
+                font-size: 18px;
+                text-decoration: none;
+                transition: var(--transition);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+                .social-links a:hover {
+                    background: var(--neon-cyan);
+                    color: #000;
+                    border-color: var(--neon-cyan);
+                    box-shadow: 0 0 20px var(--neon-glow);
+                    transform: translateY(-5px);
+                }
+
+        /* === АНИМАЦИИ ПОЯВЛЕНИЯ === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        /* Адаптивность */
+        @media (max-width: 900px) {
+            .hero-title {
+                font-size: 50px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width, button.submit-btn {
+                grid-column: 1;
+            }
+
+            .checkbox-container {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-left">
-            <img src="logo02.png" alt="Logo">
-            <h1>Chivas Auto</h1>
+        <div class="logo-area">
+            <img src="logo02.png" alt="Chivas Auto Logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3082/3082269.png'">
+            <div class="logo-text">
+                <h1>Chivas Auto</h1>
+                <span>Detailing & Polishing</span>
+            </div>
         </div>
-        <div class="header-right">
-            <a href="https://www.tiktok.com/@chivasauto" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/chivasauto?igsh=ZHI4cmFleTgxdzV4" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/share/16uVEMs5kV/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-        </div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#booking">Booking</a>
+            <a href="https://www.tiktok.com/@chivasauto" target="_blank">TikTok</a>
+            <a href="https://www.instagram.com/chivasauto" target="_blank">Instagram</a>
+        </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <img src="logo.png" alt="ChiviDetail Logo" class="hero-logo">
-            <h1>Welcome to Chivas Auto</h1>
-            <p>Premium car detailing and polishing services, inspired by the precision of a cat's eye.</p>
+        <div class="hero-content reveal active">
+            <h1 class="hero-title">CHIVAS AUTO</h1>
+            <p class="hero-subtitle">Luxury Detailing & Polishing<br>for the Discerning Eye</p>
         </div>
     </section>
 
     <section class="services" id="services">
-        <h2>Our Services</h2>
-        <div class="container">
+        <h2 class="section-header reveal">Our <span>Services</span></h2>
 
-            <div class="card">
-                <img src="https://bigsmobile.com/wp-content/uploads/2023/06/auto-detailing-car-interior-eps-2048x1367-1.jpeg" alt="Exterior and Interior Detailing">
-                <div class="title">Exterior and Interior Detailing</div>
-                <div class="price">From $150</div>
-                <div class="description">A comprehensive clean for your entire vehicle. We meticulously restore the shine to your paint and deep clean every surface inside, leaving your car looking and feeling brand new.</div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="card-img-wrapper">
+                    <img src="https://bigsmobile.com/wp-content/uploads/2023/06/auto-detailing-car-interior-eps-2048x1367-1.jpeg" alt="Detailing">
+                </div>
+                <h3 class="card-title">Exterior & Interior Detailing</h3>
+                <div class="card-price">From $150</div>
+                <p class="card-desc">A comprehensive clean for your entire vehicle. We meticulously restore the shine to your paint and deep clean every surface inside.</p>
             </div>
 
-            <div class="card">
-                <img src="https://i.shgcdn.com/2307b8f0-da7a-4788-ac87-4fc25e4d38bd/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Paint Polishing / Correction">
-                <div class="title">Odor elemination</div>
-                <div class="price">From $80</div>
-                <div class="description">Permanently removes unwanted smells like smoke, pet odors, and mildew from your car's interior, restoring a fresh and neutral environment.</div>
+            <div class="service-card reveal">
+                <div class="card-img-wrapper">
+                    <img src="https://i.shgcdn.com/2307b8f0-da7a-4788-ac87-4fc25e4d38bd/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Odor">
+                </div>
+                <h3 class="card-title">Odor Elimination</h3>
+                <div class="card-price">From $80</div>
+                <p class="card-desc">Permanently removes unwanted smells like smoke, pet odors, and mildew from your car's interior, restoring a fresh environment.</p>
             </div>
 
-            <div class="card">
-                <img src="https://assets.goaaa.com/image/upload/w_auto,q_auto,f_auto/v1663776417/Via/professional-headlight-restoration-via-magazine-aaa-shutterstock_2039932055.jpg">
-                <div class="title">Headlight Restoration</div>
-                <div class="price">From $80</div>
-                <div class="description">Clears away foggy, yellowed oxidation from your headlights, dramatically improving visibility for safer night driving and restoring your car's sharp look.</div>
+            <div class="service-card reveal">
+                <div class="card-img-wrapper">
+                    <img src="https://assets.goaaa.com/image/upload/w_auto,q_auto,f_auto/v1663776417/Via/professional-headlight-restoration-via-magazine-aaa-shutterstock_2039932055.jpg" alt="Headlights">
+                </div>
+                <h3 class="card-title">Headlight Restoration</h3>
+                <div class="card-price">From $80</div>
+                <p class="card-desc">Clears away foggy, yellowed oxidation from your headlights, dramatically improving visibility for safer night driving.</p>
             </div>
 
-            <div class="card">
-                <img src="https://lirp.cdn-website.com/90cc352a/dms3rep/multi/opt/Using-An-Orbital-Polisher-2-960w.jpeg" alt="Ceramic Coating">
-                <div class="title">Paint Polishing / Correction</div>
-                <div class="price">From $150</div>
-                <div class="description">Removes swirls, light scratches, and imperfections from your paint's surface, revealing a deep, glossy, mirror-like shine.</div>
+            <div class="service-card reveal">
+                <div class="card-img-wrapper">
+                    <img src="https://lirp.cdn-website.com/90cc352a/dms3rep/multi/opt/Using-An-Orbital-Polisher-2-960w.jpeg" alt="Paint">
+                </div>
+                <h3 class="card-title">Paint Polishing / Correction</h3>
+                <div class="card-price">From $150</div>
+                <p class="card-desc">Removes swirls, light scratches, and imperfections from your paint's surface, revealing a deep, glossy, mirror-like shine.</p>
             </div>
 
-            <div class="card">
-                <img src="https://acko-cms.ackoassets.com/ceramic_coating_for_cars_c4f75687f3.jpg" alt="Ceramic Coating">
-                <div class="title">Ceramic Coating</div>
-                <div class="price">From $400</div>
-                <div class="description">Provides durable, long-term protection for your paint against environmental damage, UV rays, and contaminants, while delivering incredible gloss and making washing easier.</div>
+            <div class="service-card reveal">
+                <div class="card-img-wrapper">
+                    <img src="https://acko-cms.ackoassets.com/ceramic_coating_for_cars_c4f75687f3.jpg" alt="Ceramic">
+                </div>
+                <h3 class="card-title">Ceramic Coating</h3>
+                <div class="card-price">From $400</div>
+                <p class="card-desc">Provides durable, long-term protection for your paint against environmental damage, UV rays, and contaminants.</p>
             </div>
 
-            <div class="card">
-                <img src="https://www.moje-auto.pl/blog/wp-content/uploads/2023/05/2-560x370.jpeg" alt="Ceramic Coating">
-                <div class="title">Glass Polishing & Protection</div>
-                <div class="price">From $250</div>
-                <div class="description">Deep cleans all exterior glass to remove tough water spots and contamination, then applies a hydrophobic coating to repel rain, improving visibility in all weather.</div>
+            <div class="service-card reveal">
+                <div class="card-img-wrapper">
+                    <img src="https://www.moje-auto.pl/blog/wp-content/uploads/2023/05/2-560x370.jpeg" alt="Glass">
+                </div>
+                <h3 class="card-title">Glass Polishing & Protection</h3>
+                <div class="card-price">From $250</div>
+                <p class="card-desc">Deep cleans exterior glass to remove tough water spots and applies a hydrophobic coating to repel rain.</p>
             </div>
 
-            <div class="card">
-                <img src="https://a1mobilecardetailing.com.au/wp-content/uploads/2023/01/car-engine-bay-detailing-1.jpg" alt="Ceramic Coating">
-                <div class="title">Engine Bay Cleaning</div>
-                <div class="price">From $80</div>
-                <div class="description">Safely degreases and details your engine compartment, removing built-up grime and dirt to make maintenance easier and showcase a pristine engine.</div>
-            </div>
-
-        </div>
-    </section>
-    <section class="contact" id="contact">
-        <h2>Request Service Quote</h2>
-
-        <form name="quote-request" method="POST" data-netlify="true">
-
-    <div class="form-group">
-        <label for="vehicle-type">Vehicle Type <span class="required">*</span></label>
-        <select id="vehicle-type" name="vehicle-type" required>
-            <option value="" disabled selected>Select vehicle type</option>
-            <option value="sedan">Sedan</option>
-            <option value="suv">SUV</option>
-            <option value="truck">Truck</option>
-            <option value="coupe">Coupe</option>
-            <option value="other">Other</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="state">State <span class="required">*</span></label>
-        <input type="text" id="state" name="state" placeholder="e.g., California" required>
-    </div>
-
-    <div class="form-group">
-        <label for="zip">ZIP Code <span class="required">*</span></label>
-        <input type="text" id="zip" name="zip" placeholder="12345" required pattern="\d{5}">
-    </div>
-
-    <div class="form-group">
-        <label for="phone">Phone Number <span class="required">*</span></label>
-        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
-    </div>
-
-    <div class="form-group">
-        <label>Requested Services</label>
-        <div class="checkbox-group">
-            <div>
-                <input type="checkbox" id="service-1" name="service-detailing" value="Exterior and Interior Detailing">
-                <label for="service-1" class="checkbox-label">Exterior and Interior Detailing</label>
-            </div>
-            <div>
-                <input type="checkbox" id="service-2" name="service-odor" value="Odor Elimination">
-                <label for="service-2" class="checkbox-label">Odor Elimination</label>
-            </div>
-            <div>
-                <input type="checkbox" id="service-3" name="service-headlight" value="Headlight Restoration">
-                <label for="service-3" class="checkbox-label">Headlight Restoration</label>
-            </div>
-            <div>
-                <input type="checkbox" id="service-4" name="service-polishing" value="Paint Polishing / Correction">
-                <label for="service-4" class="checkbox-label">Paint Polishing / Correction</label>
-            </div>
-            <div>
-                <input type="checkbox" id="service-5" name="service-ceramic" value="Ceramic Coating">
-                <label for="service-5" class="checkbox-label">Ceramic Coating</label>
-            </div>
-            <div>
-                <input type="checkbox" id="service-6" name="service-glass" value="Glass Polishing & Protection">
-                <label for="service-6" class="checkbox-label">Glass Polishing & Protection</label>
-            </div>
-            <div>
-                <input type="checkbox" id="service-7" name="service-engine" value="Engine Bay Cleaning">
-                <label for="service-7" class="checkbox-label">Engine Bay Cleaning</label>
+            <div class="service-card reveal">
+                <div class="card-img-wrapper">
+                    <img src="https://a1mobilecardetailing.com.au/wp-content/uploads/2023/01/car-engine-bay-detailing-1.jpg" alt="Engine">
+                </div>
+                <h3 class="card-title">Engine Bay Cleaning</h3>
+                <div class="card-price">From $80</div>
+                <p class="card-desc">Safely degreases and details your engine compartment, removing built-up grime and dirt to make maintenance easier.</p>
             </div>
         </div>
-    </div>
-    
-    <div class="form-group">
-        <label for="comments">Comments (Optional)</label>
-        <textarea id="comments" name="comments" placeholder="Tell us more about your service needs..."></textarea>
-    </div>
-
-    <div class="form-group">
-        <button type="submit">Submit Request</button>
-    </div>
-
-</form>
     </section>
 
+    <section class="contact-section" id="booking">
+        <h2 class="section-header reveal">Request a <span>Quote</span></h2>
+
+        <div class="booking-container reveal">
+            <!-- Добавлен атрибут enctype для поддержки загрузки файлов -->
+            <form name="quote-request" method="POST" data-netlify="true" enctype="multipart/form-data">
+
+                <div class="form-grid">
+                    <div class="input-group full-width">
+                        <label for="vehicle-type">Vehicle Type <span class="required">*</span></label>
+                        <select id="vehicle-type" name="vehicle-type" required>
+                            <option value="" disabled selected>Select vehicle type</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV</option>
+                            <option value="truck">Truck</option>
+                            <option value="coupe">Coupe</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="address">Address <span class="required">*</span></label>
+                        <input type="text" id="address" name="address" placeholder="e.g., 123 Main St, Apt 4B" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="zip">ZIP Code <span class="required">*</span></label>
+                        <input type="text" id="zip" name="zip" placeholder="12345" required pattern="\d{5}">
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label>Requested Services</label>
+                        <div class="checkbox-container">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" name="service-detailing" value="Exterior and Interior Detailing">
+                                <span class="checkbox-label">Exterior & Interior Detailing</span>
+                            </label>
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" name="service-odor" value="Odor Elimination">
+                                <span class="checkbox-label">Odor Elimination</span>
+                            </label>
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" name="service-headlight" value="Headlight Restoration">
+                                <span class="checkbox-label">Headlight Restoration</span>
+                            </label>
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" name="service-polishing" value="Paint Polishing / Correction">
+                                <span class="checkbox-label">Paint Polishing / Correction</span>
+                            </label>
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" name="service-ceramic" value="Ceramic Coating">
+                                <span class="checkbox-label">Ceramic Coating</span>
+                            </label>
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" name="service-glass" value="Glass Polishing">
+                                <span class="checkbox-label">Glass Polishing & Protection</span>
+                            </label>
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" name="service-engine" value="Engine Bay Cleaning">
+                                <span class="checkbox-label">Engine Bay Cleaning</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group full-width">
+                        <label for="photo">Attach a Photo (Optional)</label>
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="comments">Comments (Optional)</label>
+                        <textarea id="comments" name="comments" placeholder="Tell us more about your service needs..."></textarea>
+                    </div>
+
+                    <div class="full-width disclaimer">
+                        * Disclaimer: The final price may vary depending on the specific condition of the vehicle, its size, and the final scope of work required.
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
     <footer>
-        <p>Phone: +1 (445) 228-8190 | Email: chividetail@gmail.com</p>
-        <div class="socials">
-            <a href="https://www.tiktok.com/@chivasauto" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/chivasauto?igsh=ZHI4cmFleTgxdzV4" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/share/16uVEMs5kV/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <div class="footer-info">
+            <p><i class="fa-solid fa-phone"></i> +1 (445) 228-8190</p>
+            <p><i class="fa-solid fa-envelope"></i> chividetail@gmail.com</p>
+            <p style="margin-top: 15px; font-size: 12px; opacity: 0.5;">© 2024 Chivas Auto. All rights reserved.</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.tiktok.com/@chivasauto" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/chivasauto" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/16uVEMs5kV/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         </div>
     </footer>
 
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
