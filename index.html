@@ -11,8 +11,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18074402531"> </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18074402531"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -21,6 +20,21 @@
         gtag('config', 'AW-18074402531');
     </script>
 
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-18074402531/WJmqCJm6oqMcEOP9xapD',
+                'transaction_id': '',
+                'event_callback': callback
+            });
+            // Мы не пишем здесь return false, чтобы форма могла успешно отправиться
+        }
+    </script>
     <style>
         /* === ПАЛИТРА И ПЕРЕМЕННЫЕ (Cyber-Luxury) === */
         :root {
@@ -814,7 +828,7 @@
                         * Disclaimer: The final price may vary depending on the specific condition of the vehicle, its size, and the final scope of work required.
                     </div>
 
-                    <button type="submit" class="submit-btn">Submit Request</button>
+                    <button type="submit" class="submit-btn" onclick="gtag_report_conversion()">Submit Request</button>
                 </div>
             </form>
         </div>
